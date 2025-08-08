@@ -152,6 +152,8 @@ def check_time(uid):
             }
         })
 
+
 if __name__ == '__main__':
     ensure_storage_file()
-    app.run(host='0.0.0.0', port=50022, debug=False)
+    port = int(os.environ.get("PORT", 5000))  # يأخذ البورت من Render أو يستخدم 5000 محلياً
+    app.run(host='0.0.0.0', port=port)
